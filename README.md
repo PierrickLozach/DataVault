@@ -1,36 +1,180 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔐 DataVault
 
-## Getting Started
+> **Your Data. Your Control.**  
+> Backup automatique et continu de TOUS vos services en ligne vers votre stockage local.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8?logo=tailwindcss)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+## 🎯 Le Problème
+
+Votre vie numérique est dispersée sur 100+ services : Google, iCloud, réseaux sociaux, banques, emails, messageries...
+
+**Que se passe-t-il si :**
+- Un service ferme (comme Google+, Vine, Flickr...) ?
+- Votre compte est bloqué/hacké ?
+- Vous voulez changer de service sans perdre 10 ans d'historique ?
+- Vous voulez simplement **posséder** vos données ?
+
+**Réponse actuelle :** Vous perdez tout. Ou vous passez des heures sur des exports RGPD manuels.
+
+## 💡 La Solution
+
+**DataVault** synchronise automatiquement tous vos services vers votre stockage local (NAS, disque externe, cloud chiffré que vous contrôlez).
+
+- ✅ **Backup continu** — Vos données sont mirrored en temps réel
+- ✅ **Local-first** — Tout reste sur VOTRE machine
+- ✅ **Privacy-first** — Credentials chiffrés, processing local
+- ✅ **Un seul dashboard** — Visualisez tout votre univers digital
+
+## 🖥️ Screenshots
+
+Le prototype inclut un dashboard fonctionnel avec :
+- Vue de tous les services connectés (Google, iCloud, Twitter, GitHub, Slack, WhatsApp...)
+- Statuts de synchronisation en temps réel
+- Visualisation du stockage utilisé
+- Filtrage par catégorie
+- Interface bilingue FR/EN
+
+## 🚀 Quick Start
+
+### Prérequis
+
+- Node.js 20+ (recommandé : 22+)
+- npm, yarn, pnpm ou bun
+
+### Installation
 
 ```bash
+# Cloner le repo
+git clone https://github.com/PierrickLozach/DataVault.git
+cd DataVault
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🏗️ Stack Technique
 
-To learn more about Next.js, take a look at the following resources:
+| Technologie | Usage |
+|-------------|-------|
+| **Next.js 16** | Framework React avec App Router |
+| **TypeScript** | Typage statique |
+| **Tailwind CSS 4** | Styling utility-first |
+| **React 19** | UI Components |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Structure du Projet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+datavault/
+├── src/
+│   └── app/
+│       ├── page.tsx      # Dashboard principal
+│       ├── layout.tsx    # Layout racine
+│       └── globals.css   # Styles globaux
+├── public/               # Assets statiques
+├── next.config.ts        # Config Next.js
+├── tailwind.config.ts    # Config Tailwind
+└── package.json
+```
 
-## Deploy on Vercel
+## 🎨 Features du Prototype
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dashboard Principal
+- **Stats globales** : données totales, services connectés, dernier backup, stockage
+- **Grille de services** : 15+ services simulés avec statuts
+- **Filtrage** : par catégorie (Cloud, Email, Social, Productivity, Dev, Media, Messaging)
+- **Sync global** : bouton pour synchroniser tous les services
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Services Simulés
+| Catégorie | Services |
+|-----------|----------|
+| Cloud | Google, iCloud, Dropbox |
+| Email | Gmail, Outlook |
+| Social | Twitter/X, Instagram, LinkedIn |
+| Productivity | Notion, Slack |
+| Dev | GitHub |
+| Media | Spotify, Netflix |
+| Messaging | WhatsApp, Telegram |
+
+### Interactions
+- **Connect** : Modal de connexion pour les services non connectés
+- **Sync** : Animation de synchronisation
+- **Retry** : Bouton de retry pour les services en erreur
+- **Language toggle** : FR/EN
+
+## 🗺️ Roadmap (Vision Produit)
+
+### Phase 1 — MVP Desktop
+- [ ] App Electron pour Mac/Windows/Linux
+- [ ] Connecteurs OAuth pour services majeurs (Google, iCloud, Dropbox)
+- [ ] Stockage local chiffré (SQLite + encryption at rest)
+- [ ] Scheduler de backup automatique
+
+### Phase 2 — Connecteurs
+- [ ] Réseaux sociaux (Twitter, Instagram, LinkedIn, Facebook)
+- [ ] Messaging (WhatsApp, Telegram, Signal, Discord)
+- [ ] Productivity (Notion, Slack, Trello, Asana)
+- [ ] Dev (GitHub, GitLab, Bitbucket)
+- [ ] Finance (exports bancaires)
+
+### Phase 3 — Features Avancées
+- [ ] Recherche full-text dans toutes les données
+- [ ] Timeline unifiée (tous vos posts/messages/emails chronologiquement)
+- [ ] Export vers autre service (migration assistée)
+- [ ] Versioning (historique des modifications)
+- [ ] NAS sync (Synology, QNAP)
+
+### Phase 4 — Mobile & Sync
+- [ ] App mobile (iOS/Android)
+- [ ] Sync cross-device (optionnel, E2E encrypted)
+- [ ] Self-hosted server option
+
+## 🔒 Philosophie Sécurité
+
+1. **Local-first** — Les données ne quittent jamais votre machine par défaut
+2. **Zero-knowledge** — Même nous ne pouvons pas lire vos données
+3. **Credentials isolation** — Chaque service a ses propres credentials chiffrés
+4. **Open source** — Code auditable
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! 
+
+```bash
+# Fork le repo
+# Crée une branche feature
+git checkout -b feature/amazing-feature
+
+# Commit
+git commit -m 'Add amazing feature'
+
+# Push
+git push origin feature/amazing-feature
+
+# Ouvre une PR
+```
+
+## 📝 License
+
+MIT — Faites-en ce que vous voulez.
+
+---
+
+<p align="center">
+  <strong>DataVault</strong> — Parce que vos données vous appartiennent.
+</p>
