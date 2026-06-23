@@ -3,6 +3,8 @@
 > **Your Data. Your Control.**  
 > Backup automatique et continu de TOUS vos services en ligne vers votre stockage local.
 
+![DataVault Screenshot](screenshot.png)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38bdf8?logo=tailwindcss)
